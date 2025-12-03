@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation - BeeBlee</title>
+  <meta name="description" content="Documentation complète du projet BeeBlee - Fonctionnalités et spécifications techniques." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🐝</span>
+        <span class="logo-text">BeeBlee</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html#features" class="nav-link">Fonctionnalités</a>
+        <a href="index.html#how-it-works" class="nav-link">Comment ça marche</a>
+        <a href="index.html#testimonials" class="nav-link">Technique</a>
+        <a href="index.html#final-cta" class="nav-link">Nous rejoindre</a>
+        <a href="wbs.html" class="nav-link">WBS</a>
+        <a href="documentation.html" class="nav-link">Documentation</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="hero" style="min-height: 60vh; padding-top: 120px;">
+    <div class="hero-content" style="grid-column: 1 / -1; text-align: center;">
+      <div class="hero-badge">
+        WBS descriptif de BeeBlee
+      </div>
+      <h1 class="hero-title" style="font-size: 3rem;">
+        Documentation <span class="gradient-text">BeeBlee</span>
+      </h1>
+      <p class="hero-subtitle">
+       BeeBlee c'est l'application communautaire pour collectionner, partager et découvrir tous les livres, mangas, BD et comics. Crée ta bibliothèque, échange avec d’autres passionnés, rejoins des clubs, challenges et discussions. Une façon moderne, sociale et inspirante de redonner le goût de la lecture, ensemble, à travers les histoires qui nous rassemblent.
+      </p>
+    </div>
+  </section>
+
+  <section class="features" id="gestion-utilisateurs">
+    <div class="section-header">
+      <h2>Gestion des utilisateurs <span class="gradient-text">& Comptes</span></h2>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <h3>Inscription & Authentification</h3>
+        <ul>
+          <li><strong>Inscription par email</strong> : Création de compte classique avec email + mot de passe.</li>
+          <li><strong>OAuth (Google, Apple, etc.)</strong> : Possibilité de connexion simplifiée sans mot de passe via 3rd party.</li>
+          <li><strong>Double authentification (2FA)</strong> : 2FA disponible via sms pour une sécurité renforcée du compte.</li>
+          <li><strong>Récupération de mot de passe</strong> : Demande de réinitialisation du mot de passe par email.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">👤</div>
+        <h3>Profils Utilisateurs</h3>
+        <ul>
+          <li><strong>Profil public/privé</strong> : L'utilisateur choisit la visibilité de ses informations comme ses listes, ses lectures, ses reviews, ...</li>
+          <li><strong>Avatar et thèmes personnalisables</strong> : Photo de profil, theme personnalisable, dark / light mode.</li>
+          <li><strong>Liens vers autres comptes</strong> : Possibilité d'ajouter un lien vers ses autres réseaux sociaux (twitter, letterboxd, ...).</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Interactions Sociales</h3>
+        <ul>
+          <li><strong>Suivre / Ajouter en ami</strong> : Voir l'activité et les collections des autres utilisateurs (publics) et de ses amis.</li>
+          <li><strong>Likes & commentaires</strong> : Interagir avec les critiques, listes et activités en likant ou commentant.</li>
+          <li><strong>Partage de contenu</strong> : Partager ses lectures, ses listes de livres ou ses reviews dans l'application.</li>
+          <li><strong>Messagerie privée</strong> : Discuter directement avec d'autres utilisateurs via messagerie privée en plus de l'espace commentaire public.</li>
+          <li><strong>Fil d'actualité personnalisé</strong> : Suivi de l'activité de ses amis, des auteurs ou pérsonalités suivis, des clubs de lectures, ...</li>
+          <li><strong>Restrictions de commentaires</strong> : Possibilité de bloquer ou restreindre des utilisateurs spécifiques pour limiter leurs interractions.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="base-donnees">
+    <div class="section-header">
+      <h2>Gestion du contenu <span class="gradient-text">& Base de données</span></h2>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">💾</div>
+        <h3>Base de données</h3>
+        <ul>
+          <li><strong>Données externes</strong> : Dans un premier temps notre base de données de livre sera fournie par les données de Google Books et d'Open Library.</li>
+          <li><strong>Base de données évolutive</strong> : Base de données évolutive nourrie pas les ajouts des utilisateurs. Chaque ajout d'un livre dans une collection, s'il est inexistant dans notre base de donnée, est soumis à une vérification manuelle avant de la rejoindre pour les ajouts futurs.</li>
+          <li><strong>Vérifications des entrées en base</strong> : Vérification des entrées par des modérateurs ou des utilisateurs vérifiés sur le même principe que wikipedia.</li>
+          <li><strong>Réstriction et/ou bannissement des utilisateurs abusifs</strong> : Les utilisateurs qui soumettent un trop grand nombre de faux livres pourront se voir restreints voire bannis.</li>
+          <li><strong>Signalement de contenu</strong> : Les utilisateurs peuvent signaler des erreurs.</li>
+          <li><strong>Historique des modifications</strong> : Historique des moficiations sur un livre accessibles pour la transparence sur chaque changement.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Ajout de livres</h3>
+        <ul>
+          <li><strong>Scan ISBN</strong> : Scan automatique du code-barre et de l'isbn via la camera de l'utilisateur.</li>
+          <li><strong>Recherche manuelle</strong> : Recherche manuelle d'un livre</li>
+          <li><strong>Ajout manuel</strong> : Ajout manuel pour les livres absents de notre base de donnée, les livres rares et les éditions spéciales.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="collections">
+    <div class="section-header">
+      <h2>Collections, Listes <span class="gradient-text">& Organisation</span></h2>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Collections personnelles</h3>
+        <ul>
+          <li><strong>Ajout / suppression de livres</strong> : Gestion complète de sa bibliothèque, ajout et suppression de livres facile.</li>
+          <li><strong>Tags, catégories, filtres</strong> : Organisation avancée de sa bilbiothèque et ses listes via un système de tags, catégories, filtres, ...</li>
+          <li><strong>Modes d'affichage</strong> : Différents modes d'affichages de ses livres, grille, liste, couverture seule, ...</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <h3>Listes & Listes communautaires</h3>
+        <ul>
+          <li><strong>Listes privées ou publiques</strong> : Possibilité de créer des listes publiques ou privées, « Mes coups de cœur », « À lire cet été », ...</li>
+          <li><strong>Listes collaboratives</strong> : Possibilité de créer ou rejoindre des listes collaboratives et construites à plusieurs, possibilité de partager ses listes avec des utilisateurs spécifiques.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📤</div>
+        <h3>Import / Export</h3>
+        <ul>
+          <li><strong>Export CSV/JSON</strong> : Export CSV et/ou JSON de ses données.</li>
+          <li><strong>Import de bibliothèques</strong> : Récupération de ses données depuis d'autres plateformes ou fichiers.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="section-header">
+      <h2>Suivi de lecture <span class="gradient-text">& Feedback</span></h2>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Suivi de lecture</h3>
+        <ul>
+          <li><strong>Statut de lecture</strong> : À lire / En cours / Lu.</li>
+          <li><strong>Progression</strong> : Avancement page par page ou pourcentage.</li>
+          <li><strong>Statistiques</strong> : Genres le plus lus, genre le plus possédé dans sa collection, nombres de livres lus, moyenne des notes attribuées, ...</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⭐</div>
+        <h3>Avis & Notation</h3>
+        <ul>
+          <li><strong>Notation</strong> : Possibilité de noter les livres sur une échelle.</li>
+          <li><strong>Critiques textuelles</strong> : Possibilité d'écrire des reviews complètes des livres, dire ce que l'on en a pensé, partager ça avec d'autres utilisateurs.</li>
+          <li><strong>Réactions</strong> : Likes et espace commentaires sur les reviews.</li>
+          <li><strong>Recommandations</strong> : Recommandations personnalisées par IA.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3>Objectifs & Challenges</h3>
+        <ul>
+          <li><strong>Objectifs annuels</strong> : Possibilité de se fixer des objectifs personnels, lire 20 livres/an, compléter sa collection favorite, ...</li>
+          <li><strong>Challenges communautaires</strong> : Possibilité de participer à des challenges communautaires, lire un polar en octobre, lire un livre de noël en décembre, ...</li>
+          <li><strong>Système d'achievements</strong> : Achievements à débloquer dans l'application, posséder 100 livre, avoir écrit 10 reviews, avoir contribué à l'ajout de 3 livres ...</li>
+          <li><strong>Badges</strong> : Possibilité d'obtenir des badges en récompense des achievements, badges spéciaux pour les événements communautaires, ...</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="section-header">
+      <h2>Notifications <span class="gradient-text">& Partage</span></h2>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔔</div>
+        <h3>Notifications</h3>
+        <ul>
+          <li><strong>Notifications push</strong> : Possibilité d'activer ou désactiver des notificaitons push pour les nouveaux messages, les nouveaux abonnés, ...</li>
+          <li><strong>Notifications in-app</strong> : Alertes et notifictions in-app non intrusives pour les achievements, ...</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Partage et prêts</h3>
+        <ul>
+          <li><strong>Fonctionnalités de prêts</strong> : Fonctionnalités de prêts de livre intégrée via un système interne. Similaire aux achat internes de leboncoin.</li>
+          <li><strong>Suivi des prêts et partages</strong> : Suivi des livres prêtés pour pouvoir les récupérer facilement. On sait à qui on a pretté et quand. Favoriser la lecture de seconde main.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-icon">🐝</span>
+          <span class="logo-text">BeeBlee</span>
+        </div>
+        <p class="footer-baseline">La communauté qui redonne le goût de la lecture à travers le partage et la découverte.</p>
+      </div>
+      <div class="footer-nav">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="wbs.html">WBS</a></li>
+          <li><a href="mailto:beeblee@epitech.eu">Email du projet</a></li>
+          <li><a href="index.html#final-cta">Rejoindre l'équipe</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 BeeBlee. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+  <style>
+    .feature-card ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    
+    .feature-card li {
+      margin-bottom: 0.8rem;
+      padding-left: 1rem;
+      position: relative;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    
+    .feature-card li::before {
+      content: '🐝';
+      position: absolute;
+      left: -0.5rem;
+      font-size: 0.8rem;
+    }
+    
+    .feature-card strong {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+  </style>
+</body>
+</html>

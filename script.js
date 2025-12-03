@@ -41,11 +41,11 @@ window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
 
   if (currentScroll > 50) {
-    navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-    navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+    navbar.style.background = 'rgba(255, 249, 240, 0.98)';
+    navbar.style.boxShadow = '0 10px 30px rgba(255, 176, 0, 0.25)';
   } else {
-    navbar.style.background = 'rgba(15, 23, 42, 0.8)';
-    navbar.style.boxShadow = 'none';
+    navbar.style.background = 'rgba(255, 249, 240, 0.95)';
+    navbar.style.boxShadow = '0 2px 10px rgba(255, 176, 0, 0.1)';
   }
 
   lastScrollPosition = currentScroll;
@@ -74,35 +74,6 @@ document.querySelectorAll('.feature-card, .testimonial-card, .community-stat, .c
   observer.observe(el);
 });
 
-// Counter animation for stats
-function animateCounter(element, target, duration) {
-  let current = 0;
-  const increment = target / (duration / 16);
-  const interval = setInterval(() => {
-    current += increment;
-    if (current >= target) {
-      current = target;
-      clearInterval(interval);
-    }
-    element.textContent = Math.floor(current).toLocaleString();
-  }, 16);
-}
-
-// Animate stats when they come into view
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !entry.target.hasAttribute('data-animated')) {
-      entry.target.setAttribute('data-animated', 'true');
-      const text = entry.target.textContent;
-      const number = parseInt(text.replace(/\D/g, ''));
-      animateCounter(entry.target, number, 2000);
-    }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.stat-number').forEach(el => {
-  statsObserver.observe(el);
-});
 
 // Button click handlers
 document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
@@ -171,7 +142,7 @@ window.addEventListener('scroll', () => {
     const navLink = document.querySelector('.nav-link[href="#' + section.id + '"]');
 
     if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-      document.querySelectorAll('.nav-link').forEach(link => link.style.color = 'var(--dark-text)');
+      document.querySelectorAll('.nav-link').forEach(link => link.style.color = 'var(--light-text)');
       if (navLink) {
         navLink.style.color = 'var(--primary-color)';
       }
